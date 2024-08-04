@@ -13,14 +13,19 @@
      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="ActionStyle.css">
+    <!-- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ActionStyle.css"> -->
+
+    <link rel="stylesheet" href="./Styles/Profileo.css">
+
+    <link rel='stylesheet' type='text/css' media='screen' href='./Styles/profilestyle.css'>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
+
     <script src="script.js" defer></script>
-    <script src="ActionScritp.js" defer></script>
+    <script src="./Scripts/ProfileDetails.js" defer></script>
     <script src="./Scripts/PeopleDetails.js" defer></script>
 </head>
 <body>
@@ -165,27 +170,61 @@
         <div class="feeds-content">
             <div class="feeds-header dark-mode-1">
                 <div class="header-top">
-                    <h4>Home</h4>
+                    <h4>Profile</h4>
                     <i class="far fa-star"></i>
                 </div>
 
-                <div class="header-post dark-mode-1">
+                <div class="header-post dark-mode-1" style="display: none;">
                     <div class="header-img-wrapper">
                         <img src="" alt="" id="userprofileimgnav2">
                     </div>
-                    <input type="text" placeholder="whats happening?" id="homesearch" />
+                    <input type="text" placeholder="whats happening?" id="homesearch"/>
                     <i class="far fa-image"></i>
                     <i class="fas fa-camera"></i>
                     <i class="far fa-chart-bar"></i>
                 </div>
             </div>
 
+
+
             <div class="posts dark-mode-1" id="post-container">
-                <h1 style="text-align: center; margin-top: 100px; display: none;" id="NotweetText">No Tweets Found!</h1>
-                <div class="spinnerborderindex" style="display: none;">
-                    <img src="./images/Rolling@1x-1.0s-200px-200px.gif" alt="Loading..." />
-                </div>
-                <!-- 
+
+                <section class="twitterprofile">
+                    <div class="headerprofileimage">
+                        <img src="./images/backslider.jfif" alt="header" id="headerimage">
+                        <img src="https://res.cloudinary.com/dowrygm9b/image/upload/v1570267399/laptop-3174729_yiprzu.jpg" alt="profile pic" id="profilepic">
+                        <div class="editprofile">Edit Profile</div>
+                        <div id="pimage"  class="editprofile">Upload Image</div>
+                        <input type="file" id="fileInput1" accept="image/*" multiple style="display: none;">
+                    </div>
+                    <div class="bio">
+                        <div class="handle" style="padding-top: 15px;">
+                            <h3 id="username-profile"></h3>
+                            <span id="username-pid"></span>
+                        </div>
+                        <p id="desc"></p>
+                        <!-- <p>Front-end web developer |</p>
+                        <p>Barça fan |</p>
+                        <span>@Awelagos @4topsports</span> <br> -->
+                        <span id="userdob"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span><br>
+                        <span id="userlocation"> <i class="fa fa-location-arrow "></i></span>
+                        <br> <span id="joinedon"><i class="fa fa-calendar"></i></span>
+                        <!-- <div class="nawa">
+                            <div class="followers"> 421 <span>Following</span></div>
+                            <div>1519<span> Followers</span></div>
+                        </div> -->
+                    </div>
+                </section>
+                <section class="tweets" style="font-size: 15px;">
+                    <div class="heading">
+                        <p>Tweets</p>
+                        <p>Tweets and Replies</p>
+                        <p>Media</p>
+                        <p>Likes</p>
+                    </div>
+                </section>
+                
+<!-- 
                 <div class="post">
                     <div class="user-avatar">
                         <img src="images/user2.jpg">
@@ -366,8 +405,8 @@
         </div>
 
         <!-- Post button --><br><br>
-         <button type="button" class="post-btn">
-            + </i>Tweet
+         <button type="button" class="post-btn" style="display: none;">
+            + </i>Post
          </button>
 
         <!-- Post Modal -->
@@ -375,20 +414,7 @@
             <div class="modal dark-mode-1">
                 <div class="modal-header">
                     <i class="fas fa-times"></i>
-                    <div class="spinnerborder" style="display: none;">
-                        <img src="./images/Rolling@1x-1.0s-200px-200px.gif" alt="Loading..." />
-                    </div>
                     <button type="button">Post</button>
-                </div>
-                <div class="modal-body" style="display: none;" id="replyshowmodal">
-                    <div class="modal-img">
-                        <img src="images/user1.jpg" id="userimagemodal2">
-                    </div>
-                    <div type="text" placeholder="Add your commentss" class="modal-input"><h6 id="tweetcontentinput2"></h6></div>
-                    <!-- <div id="emojiContainer" class="emoji-container">
-                    </div>
-                    <div id="emojiContainer1" class="emoji-container"></div> -->
-                    <i class="far fa-smile" id="emojiButton"></i>
                 </div>
                 <div class="modal-body">
                     <div class="modal-img">

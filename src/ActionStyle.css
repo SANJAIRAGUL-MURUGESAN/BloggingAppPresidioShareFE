@@ -1,0 +1,153 @@
+
+.modal-icons i, .modal-icons span {
+    cursor: pointer;
+}
+input[type="file"] {
+    display: none;
+}
+
+.imagepreview{
+    height: 10rem;
+    width: 10rem;
+}
+
+.image-preview-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.image-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Hashtag Container */
+
+/* Basic styles for modal and input */
+
+/* Hashtags, Comments starts */
+
+.emoji-container {
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    background: white;
+    /* overflow-y: auto; */
+    z-index: 1000;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 300px;
+    top: 40px; /* Adjust based on your layout */
+    left: 0; /* Adjust based on your layout */
+    margin-left: 100px;
+    margin-top: 150px;
+    scroll-behavior: auto;
+}
+
+.emoji-container  div {
+    padding: 8px;
+    cursor: pointer;
+    width: 300px;
+    font-size: 18px;
+}
+
+.emoji-container  div:hover {
+    background: #f0f0f0;
+}
+
+/* .emoji {
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.emoji:hover {
+    background: #f0f0f0;
+    border-radius: 4px;
+} */
+
+/* End of hastag Container */
+
+/* Hashtags, Comments ends */
+
+/* Comments Enable,disable starts*/
+
+.commentdisable{
+    display: none;
+}
+
+
+/* Comments Enable,disable ends*/
+
+.liked {
+    background-color: red !important;
+}
+
+.highlight {
+    color: #1aa1f5;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.retweet {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.spinnerborder{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-left: 400px;
+}
+
+.spinnerborder img{
+
+    height: 40px;
+    width: 40px;
+}
+
+@media(max-width: 500px){
+    .spinnerborder{
+        margin-left: 245px;
+    }
+}
+
+.spinnerborderindex{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    /* margin-left: 200px; */
+}
+
+.spinnerborderindex img{
+
+    height: 40px;
+    width: 40px;
+}
+
+/* @media(max-width: 500px){
+    .spinnerborderindex{
+        margin-left: 245px;
+    }
+} */
+
+.spinnerborderpeople{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    /* margin-left: 200px; */
+}
+
+.spinnerborderpeople img{
+
+    height: 40px;
+    width: 40px;
+}

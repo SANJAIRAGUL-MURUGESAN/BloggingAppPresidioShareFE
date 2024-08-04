@@ -13,14 +13,15 @@
      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="ActionStyle.css">
+    <link rel="stylesheet" href="./Styles/Notification.css">
+    <!-- <link rel="stylesheet" href="ActionStyle.css"> -->
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script src="script.js" defer></script>
-    <script src="ActionScritp.js" defer></script>
+    <script src="./Scripts/Notification.js" defer></script>
+
     <script src="./Scripts/PeopleDetails.js" defer></script>
 </head>
 <body>
@@ -144,7 +145,7 @@
             <div class="icons">
                 <a href="index.html" class="active"><i class="fas fa-home"></i></a>
                 <a href=""><i class="fas fa-hashtag"></i></a>
-                <a href="Notification.html" id="notifi"><i class="fa-solid fa-bell"></i></a>
+                <a href="Notification.html"><i class="far fa-bell" id="notifi"></i></a>
                 <a href=""><i class="far fa-envelope"></i></a>
             </div>
 
@@ -163,29 +164,41 @@
         </nav>
 
         <div class="feeds-content">
-            <div class="feeds-header dark-mode-1">
+            <div class="feeds-header dark-mode-1" id="header-notifi">
                 <div class="header-top">
                     <h4>Home</h4>
                     <i class="far fa-star"></i>
                 </div>
-
-                <div class="header-post dark-mode-1">
+                
+                <div class="header-post dark-mode-1" style="display: none;">
                     <div class="header-img-wrapper">
                         <img src="" alt="" id="userprofileimgnav2">
                     </div>
-                    <input type="text" placeholder="whats happening?" id="homesearch" />
+                    <input type="text" placeholder="whats happening?" id="homesearch"/>
                     <i class="far fa-image"></i>
                     <i class="fas fa-camera"></i>
                     <i class="far fa-chart-bar"></i>
                 </div>
-            </div>
 
-            <div class="posts dark-mode-1" id="post-container">
-                <h1 style="text-align: center; margin-top: 100px; display: none;" id="NotweetText">No Tweets Found!</h1>
                 <div class="spinnerborderindex" style="display: none;">
                     <img src="./images/Rolling@1x-1.0s-200px-200px.gif" alt="Loading..." />
                 </div>
-                <!-- 
+                <h1 style=" margin-top: 100px; margin-left: 150px; display: none;" id="NotweetText">No Users Found For Your Search!</h1>
+
+                <!-- <div class="header-post dark-mode-1">
+                    <div class="header-img-wrapper">
+                        <img src="./images/user1.jpg" alt="" id="userprofileimgnav2">
+                    </div>
+                    <div class="input">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    <input type="text" placeholder="whats happening?" />
+                    <i class="far fa-image"></i>
+                    <i class="fas fa-camera"></i>
+                    <i class="far fa-chart-bar"></i>
+                </div> -->
+            </div>
+
+            <!-- <div class="posts dark-mode-1" id="post-container"> -->
+<!-- 
                 <div class="post">
                     <div class="user-avatar">
                         <img src="images/user2.jpg">
@@ -300,7 +313,7 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
+            <!-- </div> -->
 
             <div class="follow dark-mode-1" id="follow-container">
                 <h3 class="follow-heading">Who to follow</h3>
@@ -366,35 +379,36 @@
         </div>
 
         <!-- Post button --><br><br>
-         <button type="button" class="post-btn">
-            + </i>Tweet
+         <button type="button" class="post-btn" style="display: none;">
+            + </i>Post
          </button>
 
         <!-- Post Modal -->
-        <div class="modal-wrapper">
+
+        <div class="modal-wrapper" style="display: none;">
             <div class="modal dark-mode-1">
                 <div class="modal-header">
                     <i class="fas fa-times"></i>
-                    <div class="spinnerborder" style="display: none;">
-                        <img src="./images/Rolling@1x-1.0s-200px-200px.gif" alt="Loading..." />
-                    </div>
-                    <button type="button">Post</button>
+                    <button type="button" id="commentsubmit">Post</button>
                 </div>
+                <!-- ReplyComment -->
                 <div class="modal-body" style="display: none;" id="replyshowmodal">
                     <div class="modal-img">
-                        <img src="images/user1.jpg" id="userimagemodal2">
+                        <img src="images/user1.jpg" id="userimagemodal">
                     </div>
-                    <div type="text" placeholder="Add your commentss" class="modal-input"><h6 id="tweetcontentinput2"></h6></div>
-                    <!-- <div id="emojiContainer" class="emoji-container">
+                    <div type="text" placeholder="Add your comment" class="modal-input"><h6 id="tweetcontentinput2"></h6></div>
+                    <div id="emojiContainer" class="emoji-container">
+                        <!-- <div>HI Hello</div> -->
                     </div>
-                    <div id="emojiContainer1" class="emoji-container"></div> -->
+                    <div id="emojiContainer1" class="emoji-container"></div>
                     <i class="far fa-smile" id="emojiButton"></i>
                 </div>
+                <!-- ReplyComment -->
                 <div class="modal-body">
                     <div class="modal-img">
                         <img src="images/user1.jpg" id="userimagemodal">
                     </div>
-                    <input type="text" placeholder="whats happening?" class="modal-input" id="tweetcontentinput">
+                    <input type="text" placeholder="Add your comment" class="modal-input" id="tweetcontentinput">
                     <div id="emojiContainer" class="emoji-container">
                         <!-- <div>HI Hello</div> -->
                     </div>
