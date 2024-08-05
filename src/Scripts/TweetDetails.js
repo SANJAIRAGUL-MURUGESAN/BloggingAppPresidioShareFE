@@ -642,15 +642,18 @@ function rendertweet(tweet,comments){
     span.style.cursor = 'pointer'
     span.style.color = 'blue'
     span.style.textDecoration = 'underline';
-    userHandleSpan.appendChild(span)
-    userHandleSpan.style.fontSize = '12px'
+    if(tweet.userId == localStorage.getItem('userid')){
+        userHandleSpan.appendChild(span)
+        userHandleSpan.style.fontSize = '12px'
+    
+        span.addEventListener('click',async()=>{
+            modal.style.display = 'block'
+            modalWrapper.classList.add('modal-wrapper-display')
+            document.getElementById('tweetcontentinput').value = tweet.tweetContent
+            localStorage.setItem('BackendTo','edittweetcontent')
+        })
+    }
 
-    span.addEventListener('click',async()=>{
-        modal.style.display = 'block'
-        modalWrapper.classList.add('modal-wrapper-display')
-        document.getElementById('tweetcontentinput').value = tweet.tweetContent
-        localStorage.setItem('BackendTo','edittweetcontent')
-    })
 
     postUserInfoDiv.appendChild(userNameH4);
     postUserInfoDiv.appendChild(checkIcon);
@@ -1019,15 +1022,18 @@ function renderRetweet(tweet,comments) {
         span.style.cursor = 'pointer'
         span.style.color = 'blue'
         span.style.textDecoration = 'underline';
-        userHandleSpan.appendChild(span)
-        userHandleSpan.style.fontSize = '12px'
-    
-        span.addEventListener('click',async()=>{
-            modal.style.display = 'block'
-            modalWrapper.classList.add('modal-wrapper-display')
-            document.getElementById('tweetcontentinput').value = tweet.retweetContent
-            localStorage.setItem('BackendTo','editretweetcontent')
-        })
+        if(tweet.userId==localStorage.getItem('userid')){
+            userHandleSpan.appendChild(span)
+            userHandleSpan.style.fontSize = '12px'
+        
+            span.addEventListener('click',async()=>{
+                modal.style.display = 'block'
+                modalWrapper.classList.add('modal-wrapper-display')
+                document.getElementById('tweetcontentinput').value = tweet.retweetContent
+                localStorage.setItem('BackendTo','editretweetcontent')
+            })
+        }
+
   
         postUserInfoDiv.appendChild(userNameH4);
         postUserInfoDiv.appendChild(checkIcon);
