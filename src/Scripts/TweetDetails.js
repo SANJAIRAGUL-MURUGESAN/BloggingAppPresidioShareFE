@@ -96,7 +96,8 @@ function timeAgo(date) {
 
   // Function to get the mentions starts
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded',async function () {
+
     const inputField = document.getElementById('tweetcontentinput');
     const hashtagSuggestions = document.getElementById('emojiContainer1');
   

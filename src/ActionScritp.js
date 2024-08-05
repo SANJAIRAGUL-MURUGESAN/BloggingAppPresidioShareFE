@@ -300,7 +300,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Function to get the mentions starts
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
+  var mentionusernames = []
+
+  await fetch('https://bloggingapppresidioshare.azurewebsites.net/api/User/GetMentions', {
+      method: 'POST',
+      headers: {
+          'Authorization': 'Bearer '+localStorage.getItem('token'),
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(localStorage.getItem('userid'))
+  }).then(async (response) => {
+      if (!response.ok) {
+          throw new Error('Failed to update Dislike status');
+      }else{
+          var data = await response.json();
+          // console.log(data)
+          mentionusernames=data
+          // console.log(mentionusernames)
+      }
+  }).catch(error => {
+      console.error(error);
+  });
+
   const inputField = document.getElementById('tweetcontentinput');
   const hashtagSuggestions = document.getElementById('emojiContainer1');
 
@@ -317,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (hashtag.length > 0) {
               // Use dummy data for hashtags
               const dummyHashtags = ['sanjai25','ragul','gayathri03','ritika','presidio','genspark'];
-              const filteredHashtags = dummyHashtags.filter(tag => tag.startsWith(hashtag));
+              const filteredHashtags = mentionusernames.filter(tag => tag.startsWith(hashtag));
               // console.log(filteredHashtags.length)
               if(filteredHashtags.length>0){
                 showHashtags(filteredHashtags);
