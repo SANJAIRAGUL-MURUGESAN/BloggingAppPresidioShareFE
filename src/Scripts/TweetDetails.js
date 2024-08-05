@@ -989,7 +989,7 @@ function rendertweet(tweet,comments){
 }
 
 function renderRetweet(tweet,comments) {
-    console.log(tweet)
+    // console.log(tweet)
     const postContainer = document.getElementById('post-container');
     // postContainer.innerHTML = ''; // Clear existing posts
   
@@ -1024,7 +1024,7 @@ function renderRetweet(tweet,comments) {
         span.style.color = 'blue'
         span.style.textDecoration = 'underline';
 
-        if(tweet.userId==localStorage.getItem('userid')){
+        if(tweet.retweetOwnerId==localStorage.getItem('userid')){
             userHandleSpan.appendChild(span)
             userHandleSpan.style.fontSize = '12px'
         
