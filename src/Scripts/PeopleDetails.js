@@ -171,7 +171,7 @@ function renderfollowpeopledate(users) {
     const privacy = document.createElement('li');
     const privacyLink = document.createElement('a');
     privacyLink.href = '#';
-    privacyLink.textContent = 'Privacy Policy';
+    privacyLink.textContent = 'Privacy;
     privacy.appendChild(privacyLink);
 
     const cookies = document.createElement('li');
