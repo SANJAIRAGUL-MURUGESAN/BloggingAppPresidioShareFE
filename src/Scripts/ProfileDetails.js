@@ -14,6 +14,7 @@
 
 
 document.addEventListener('DOMContentLoaded', async function() {
+
     await fetch('https://bloggingapppresidioshare.azurewebsites.net/api/User/UserProfileDetails', {
         method: 'POST',
         headers: {
@@ -34,6 +35,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             document.getElementById('desc').innerHTML = `${data.bioDescription} |`
             document.getElementById('userlocation').innerHTML =  ` <i class="fa fa-location-arrow "></i>  ${(data.location)}`
             document.getElementById('joinedon').innerHTML = `<i class="fa fa-calendar" aria-hidden="true"></i> Joined on:  ${formatDate(data.joinedDate)}`
+            if(localStorage.getItem('userid')==data.id){
+                document.getElementById('pimage').style.display = 'block'
+                document.getElementById('pedit').style.display = 'block'
+            }
         }
     }).catch(error => {
         console.error(error);
