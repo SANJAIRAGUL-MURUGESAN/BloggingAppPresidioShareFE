@@ -196,7 +196,7 @@ function renderfollowpeopledate(users) {
     ul.appendChild(privacy);
     ul.appendChild(cookies);
     ul.appendChild(about);
-    ul.appendChild(more);
+    // ul.appendChild(more);
     footer.appendChild(ul);
     followContainer.appendChild(followLinkDiv)
     followContainer.appendChild(footer)
