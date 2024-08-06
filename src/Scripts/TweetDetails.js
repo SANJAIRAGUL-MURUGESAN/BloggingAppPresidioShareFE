@@ -638,7 +638,7 @@ function rendertweet(tweet,comments){
     const userHandleSpan = document.createElement('span');
     userHandleSpan.textContent = `@${tweet.tweetOwnerUserId} . ${timeAgo(tweet.tweetDateTime)}`;
     const span =document.createElement('span');
-    span.textContent = 'Edit'
+    span.textContent = ' Edit'
     span.style.fontSize = '12px'
     span.style.cursor = 'pointer'
     span.style.color = 'blue'
@@ -1019,7 +1019,7 @@ function renderRetweet(tweet,comments) {
         userHandleSpan.textContent = `@${tweet.retweetUserId} . Reposted ${timeAgo(tweet.retweetDateTime)}    `;
         userHandleSpan.style.fontSize = '12px'
         const span =document.createElement('span');
-        span.textContent = 'Edit'
+        span.textContent = ' Edit'
         span.style.fontSize = '12px'
         span.style.cursor = 'pointer'
         span.style.color = 'blue'
