@@ -171,7 +171,7 @@ function renderfollowpeopledate(users) {
     const privacy = document.createElement('li');
     const privacyLink = document.createElement('a');
     privacyLink.href = '#';
-    privacyLink.textContent = 'Privacy;
+    privacyLink.textContent = 'Privacy';
     privacy.appendChild(privacyLink);
 
     const cookies = document.createElement('li');
@@ -186,11 +186,11 @@ function renderfollowpeopledate(users) {
     aboutLink.textContent = 'About';
     about.appendChild(aboutLink);
 
-    const more = document.createElement('li');
-    const moreLink = document.createElement('a');
-    moreLink.href = '#';
-    moreLink.textContent = 'More';
-    more.appendChild(moreLink);
+    // const more = document.createElement('li');
+    // const moreLink = document.createElement('a');
+    // moreLink.href = '#';
+    // moreLink.textContent = 'More';
+    // more.appendChild(moreLink);
 
     ul.appendChild(terms);
     ul.appendChild(privacy);
